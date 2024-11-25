@@ -225,7 +225,7 @@ export function getBlessEffects() {
       shortDescription: "+4 magic resistance vs. sleep"
     },
     {id: 75, g: 1, name: "Heroism (*)",
-      shortDescription: "+50% experience"
+      shortDescription: "+35% experience"
     },
     {id: 76, g: 2, name: "Quiet Stride",
       shortDescription: "+20 stealth"
