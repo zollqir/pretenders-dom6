@@ -73,7 +73,11 @@ function BlessEffects(props) {
         onClose={closeBlessList}
         blessEffects={blessEffects}
       />
-      <NationBlessBonusInfo blessBonus={blessBonus} blessPoints={blessPoints} />
+      <NationBlessBonusInfo
+        blessBonus={blessBonus}
+        blessPoints={blessPoints}
+        selectedBlesses={selectedBlesses}
+      />
 
       <p>
         Available Blesses
