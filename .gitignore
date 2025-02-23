@@ -38,5 +38,3 @@ TODO
 # vs code debugger
 .vscode/launch.json
 
-# gh pages
-/dist/assets
