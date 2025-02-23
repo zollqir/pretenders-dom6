@@ -2,12 +2,8 @@
   background: linear-gradient(#3f4142, #3d3940);
   cursor: pointer;
 
-  &:hover {
+  &:hover:not(:has(.add_button:hover)) {
     background: linear-gradient(darken(#3f4142, 5%), darken(#3d3940, 5%));
-  }
-
-  &.selected {
-    background: linear-gradient(darken(#3f4142, 10%), darken(#3d3940, 10%));
   }
 }
 
@@ -31,4 +27,12 @@
 
 .centered {
   text-align: center;
+}
+
+.add_button {
+  text-align: center;
+  background: linear-gradient(#3f4142, #3d3940);
+  &:hover {
+    background: linear-gradient(lighten(#3f4142, 5%), lighten(#3d3940, 5%));
+  }
 }
