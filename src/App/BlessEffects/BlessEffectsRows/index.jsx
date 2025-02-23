@@ -1,15 +1,14 @@
 import React from 'react';
-
 import BlessPointsCell from '../BlessPointsCell';
-
 import styles from './BlessEffectsRows.module.scss';
 
 function BlessEffectsRows(props) {
-    const { effects } = props;
+    const { effects, onBlessSelect } = props;
     const rows = effects.map(effect => {
-        const { id, scales, name, shortDescription, incarnate } = effect;
+        const { id, scales, name, shortDescription, incarnate, multi } = effect;
+
 	return (
-	    <tr key={id} className={styles.row}>
+	    <tr key={id} className={styles.row} onClick={() => onBlessSelect?.(effect)}>
               <BlessPointsCell effect={effect}/>
               <td className={styles.scales}>
 		{
@@ -24,6 +23,8 @@ function BlessEffectsRows(props) {
               <td className={styles.name}>{name}</td>
               <td className={styles.description}>{shortDescription}</td>
               <td className={styles.incarnate}>{incarnate ? "yes" : ""}</td>
+        <td className={styles.name}>{name} {multi && ' (*)'}</td>
+        <td className={styles.incarnate}>{incarnate ? "yes" : ""}</td>
 	    </tr>
 	);
     });

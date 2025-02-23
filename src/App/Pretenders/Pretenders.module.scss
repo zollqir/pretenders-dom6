@@ -91,3 +91,14 @@
 .contents {
   text-align: center;
 }
+
+.minimal_button {
+  font-size: 10px;
+  padding: 1px;
+  margin: 1px;
+  border-radius: 4px;
+  background-color: #3f4142;
+  color: #cccccc;
+  border: 1px solid #3f4142;
+  cursor: pointer;
+}

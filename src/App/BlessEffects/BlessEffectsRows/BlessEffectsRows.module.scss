@@ -23,3 +23,19 @@
     text-align: center;
     background: linear-gradient(#3f4142, #3d3940);
 }
+
+.row {
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.centered {
+  text-align: center;
+}

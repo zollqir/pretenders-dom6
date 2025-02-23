@@ -5,13 +5,13 @@ import {filterPretendersByImprisonment} from './filterPretendersByImprisonment';
 import {filterPretendersByChassis} from './filterPretendersByChassis';
 import { blessOptimizer } from './blessOptimizer';
 import {pretenderCost} from './pretenderCost';
-
+import Export from './Export';
 import styles from './Pretenders.module.scss';
 
 function Pretenders(props) {
 
   const {
-      f, a, w, e, s, d, n, g, b,  
+      f, a, w, e, s, d, n, g, b,
       nations,
       nationId,
       pretenders,
@@ -25,7 +25,8 @@ function Pretenders(props) {
       blessBonus,
       openPretenderOptimizer,
       closePretenderOptimizer,
-      isPretenderOptimizerOpen
+      isPretenderOptimizerOpen,
+      selectedBlesses
   } = props;
 
   const paths = {f, a, w, e, s, d, n, g, b};
@@ -252,6 +253,17 @@ function Pretenders(props) {
           <td className={styles[`table_cell${data.n > 0 ? "_n" : ""}`]}>{data.n > 0 ? `N${data.n}` : ""}</td>
           <td className={styles[`table_cell${data.g > 0 ? "_g" : ""}`]}>{data.g > 0 ? `G${data.g}` : ""}</td>
           <td className={styles[`table_cell${data.b > 0 ? "_b" : ""}`]}>{data.b > 0 ? `B${data.b}` : ""}</td>
+          {nationId !== 0 && nationId !== "0" && (
+            <Export
+              nationId={nationId}
+              pretender={data}
+              paths={paths}
+              dominion={dominion}
+              imprisonment={imprisonment}
+              scales={scales}
+              selectedBlesses={selectedBlesses}
+            />
+          )}
         </tr>
     );
       });
@@ -269,6 +281,9 @@ function Pretenders(props) {
           <th className={styles.table_header}>Dominion</th>
           <th className={styles.table_header}>Scales</th>
           <th className={styles.table_header} colSpan="9">Magic</th>
+          {nationId !== 0 && nationId !== "0" && (
+            <th className={styles.table_header}>Export</th>
+          )}
         </tr>
       </thead>
       <tbody id="pretenders-table__body">
