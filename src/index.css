@@ -2,8 +2,20 @@ body {
   margin: 0;
   padding: 0;
   background-color: #3f4142;
-  font-size: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
 }
