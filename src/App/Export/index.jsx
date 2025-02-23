@@ -1,5 +1,4 @@
 import React from "react";
-import { saveAs } from "file-saver";
 
 function Export({
   nationID,
@@ -76,11 +75,21 @@ function Export({
   const handleExport = () => {
     const content = selectedPretenders
       .map((pretender) => generateTemplate(pretender))
-      .join("\n\n"); // Add extra newline between templates
+      .join("\n\n");
 
     const fileName = `${nationID}${selectedPretenders[0].name}.txt`;
-    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, fileName);
+
+    // Create a download link element
+    const element = document.createElement("a");
+    const file = new Blob([content], { type: "text/plain;charset=utf-8" });
+    element.href = URL.createObjectURL(file);
+    element.download = fileName;
+
+    // Append to document, click, and cleanup
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+    URL.revokeObjectURL(element.href);
   };
 
   return <button onClick={handleExport}>Export Pretender</button>;

@@ -1,17 +1,13 @@
 import getNations from '../getNations';
-import { defaultTo } from 'ramda';
 
 const getDefaultScales = (nationId) => {
-    const scales = defaultTo(
-        {},
-        getNations()[nationId].scales
-    );
-    const order = defaultTo(0, scales.order);
-    const productivity = defaultTo(0, scales.productivity);
-    const heat = defaultTo(0, scales.heat);
-    const growth = defaultTo(0, scales.growth);
-    const fortune = defaultTo(0, scales.fortune);
-    const magic = defaultTo(0, scales.magic);
+    const scales = getNations()[nationId]?.scales ?? {};
+    const order         = scales.order        ?? 0;
+    const productivity  = scales.productivity ?? 0;
+    const heat          = scales.heat         ?? 0;
+    const growth        = scales.growth       ?? 0;
+    const fortune       = scales.fortune      ?? 0;
+    const magic         = scales.magic        ?? 0;
     return {
         order, productivity, heat,
         growth, fortune, magic

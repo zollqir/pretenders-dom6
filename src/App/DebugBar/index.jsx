@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './DebugBar.module.scss';
-import { sum } from 'ramda';
 
 function DebugBar(props) {
     // const { noOfPretenders } = props;
@@ -8,7 +7,9 @@ function DebugBar(props) {
         scalesCosts,
         pointsForImprisonment,
     } = props;
-    const totalCostOfScales = sum(Object.values(scalesCosts));
+    const totalCostOfScales = Object.values(scalesCosts).reduce(
+    (acc, curr) => acc + curr, 0
+  );
     // const fBonus = props.blessBonus.f
     return (
         <div>

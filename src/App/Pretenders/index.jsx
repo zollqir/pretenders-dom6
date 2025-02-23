@@ -5,7 +5,6 @@ import {filterPretendersByImprisonment} from './filterPretendersByImprisonment';
 import {filterPretendersByChassis} from './filterPretendersByChassis';
 import { blessOptimizer } from './blessOptimizer';
 import {pretenderCost} from './pretenderCost';
-import { sum } from 'ramda';
 
 import styles from './Pretenders.module.scss';
 
@@ -33,7 +32,9 @@ function Pretenders(props) {
   
   const points = 450;
 
-  const totalCostOfScales = sum(Object.values(scalesCosts));
+  const totalCostOfScales = Object.values(scalesCosts).reduce(
+    (acc, curr) => acc + curr, 0
+  );
   const pointsLeftWithoutPretenders = points + pointsForImprisonment - totalCostOfScales;
 
   const filteredPretenderIds = filterPretendersByChassis(
@@ -51,7 +52,7 @@ function Pretenders(props) {
   if (isPretenderOptimizerOpen) {
     const filteredPretenderIdsByCost = filteredPretenderIds.filter(pretenderId => {
       return pointsLeftWithoutPretenders - pretenderCost(pretenders[pretenderId], nations[nationId], paths, dominion) >= 0;
-    })
+    });
     
     const pretenderRows = filteredPretenderIdsByCost.map(pretenderId => {
       const pretender = pretenders[pretenderId];
