@@ -1,21 +1,22 @@
-import React from 'react';
-import styles from './DebugBar.module.scss';
-import { sum } from 'ramda';
+import React from "react";
+import styles from "./DebugBar.module.scss";
 
 function DebugBar(props) {
-    // const { noOfPretenders } = props;
-    const {
-        scalesCosts,
-        pointsForImprisonment,
-    } = props;
-    const totalCostOfScales = sum(Object.values(scalesCosts));
-    // const fBonus = props.blessBonus.f
-    return (
-        <div>
-          <section className={styles.row}>Debugger</section>
-          <section className={styles.row}>Imprisonment Points: {pointsForImprisonment}</section>
-          <section className={styles.row}>Scales Cost: {totalCostOfScales}</section>
-          {/*<section className={styles.row}>Is Bless Effects Window Open: {isBlessEffectsWindowOpen}</section>
+  // const { noOfPretenders } = props;
+  const { scalesCosts, pointsForImprisonment } = props;
+  const totalCostOfScales = Object.values(scalesCosts).reduce(
+    (acc, curr) => acc + curr,
+    0
+  );
+  // const fBonus = props.blessBonus.f
+  return (
+    <div>
+      <section className={styles.row}>Debugger</section>
+      <section className={styles.row}>
+        Imprisonment Points: {pointsForImprisonment}
+      </section>
+      <section className={styles.row}>Scales Cost: {totalCostOfScales}</section>
+      {/*<section className={styles.row}>Is Bless Effects Window Open: {isBlessEffectsWindowOpen}</section>
           
         
           <section className={styles.row}>F bless bonus: {fBonus}</section>
@@ -33,10 +34,9 @@ function DebugBar(props) {
           <section className={styles.row}>Growth is: {props.growth}</section>
           <section className={styles.row}>Fortune is: {props.fortune}</section>
           <section className={styles.row}>Magic is: {props.magic}</section>
-          */
-          }
-        </div>
-    );
+          */}
+    </div>
+  );
 }
 
 export default DebugBar;

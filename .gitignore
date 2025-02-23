@@ -31,3 +31,9 @@ yarn-debug.log*
 yarn-error.log*
 
 TODO
+
+# env
+.env
+
+# vs code debugger
+.vscode/launch.json

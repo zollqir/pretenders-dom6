@@ -1,7 +1,7 @@
 import pretendersToRemove from './pretendersToRemove';
 import nationScalesToFix from './nationScalesToFix';
-const nation_pretenders = require('../data/nations_pretenders.json');
-const nations = require('../data/nations.json');
+import nation_pretenders from '../data/nations_pretenders.json';
+import nations from '../data/nations.json';
 
 nation_pretenders["0"] = [];
 
