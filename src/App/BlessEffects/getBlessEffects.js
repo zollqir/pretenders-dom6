@@ -188,7 +188,7 @@ export function getBlessEffects() {
     {id: 62, d: 8, name: "Death Weapons", incarnate: true,
       shortDescription: "Death effect (2 AN dmg MR negates + disease MR negates)"
     },
-    {id: 63, d: 8, name: "Fear", incarnate: true,
+    {id: 63, d: 9, name: "Fear", incarnate: true,
       shortDescription: "Fear 5"
     },
     {id: 64, n: 1, scales:{}, name: "Resilient", multi: true,
@@ -245,7 +245,7 @@ export function getBlessEffects() {
     {id: 81, g: 7, name: "Displacement", incarnate: true,
       shortDescription: "Displacement effect (-10 enemy attack on first hit, -5 attack subsequently)"
     },
-    {id: 82, g: 7, name: "Dread", incarnate: true,
+    {id: 82, g: 8, name: "Dread", incarnate: true,
       shortDescription: "Fear 5 (true sight negates)"
     },
     {id: 83, g: 8, scales:{fortune:2}, name: "Luck", incarnate: true,
