@@ -1,93 +1,104 @@
 .table {
-    font-size: 12px;
-    color: #cccccc;
+  font-size: 12px;
+  color: #cccccc;
 }
 
 .table_header {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .table_cell {
-    padding: 1px;
-    font-size: 11px;
-    text-align: center;
-    background: linear-gradient(#3f4142, #3d3940);
+  padding: 1px;
+  font-size: 11px;
+  text-align: center;
+  background: linear-gradient(#3f4142, #3d3940);
 }
 
 .table_cell_name {
-    @extend .table_cell;
-    text-align: left;
+  @extend .table_cell;
+  text-align: left;
 }
 
 .table_cell_id {
-    @extend .table_cell;
-    font-size: 8px;
+  @extend .table_cell;
+  font-size: 8px;
 }
 
 .table_cell_f {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #b03523;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #b03523;
 }
 
 .table_cell_a {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #a38e96;
-    color: #f6f6f6;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #a38e96;
+  color: #f6f6f6;
 }
 
 .table_cell_w {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #331d98;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #331d98;
 }
 
 .table_cell_e {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #b08130;
-    color: #f6f6f6;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #b08130;
+  color: #f6f6f6;
 }
 
 .table_cell_s {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #709b96;
-    color: #f6f6f6;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #709b96;
+  color: #f6f6f6;
 }
 
 .table_cell_d {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #701b63;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #701b63;
 }
 
 .table_cell_n {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #3d7523;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #3d7523;
 }
 
 .table_cell_g {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #d767c5;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #d767c5;
 }
 
 .table_cell_b {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #7d1b16;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #7d1b16;
 }
 
 .table_cell_new {
-    @extend .table_cell;
-    background-image: none;
-    background-color: #d8d004;
-    color: #000000;
+  @extend .table_cell;
+  background-image: none;
+  background-color: #d8d004;
+  color: #000000;
 }
 
 .contents {
   text-align: center;
+}
+
+.minimal_button {
+  font-size: 10px;
+  padding: 1px;
+  margin: 1px;
+  border-radius: 4px;
+  background-color: #3f4142;
+  color: #cccccc;
+  border: 1px solid #3f4142;
+  cursor: pointer;
 }

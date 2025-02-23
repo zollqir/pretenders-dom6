@@ -5,6 +5,7 @@ import { filterPretendersByImprisonment } from "./filterPretendersByImprisonment
 import { filterPretendersByChassis } from "./filterPretendersByChassis";
 import { blessOptimizer } from "./blessOptimizer";
 import { pretenderCost } from "./pretenderCost";
+import Export from "./Export";
 
 import styles from "./Pretenders.module.scss";
 
@@ -426,6 +427,16 @@ function Pretenders(props) {
             <td className={styles[`table_cell${data.b > 0 ? "_b" : ""}`]}>
               {data.b > 0 ? `B${data.b}` : ""}
             </td>
+            {nationId !== 0 && nationId !== "0" && (
+              <Export
+                nationId={nationId}
+                pretender={data}
+                paths={paths}
+                dominion={dominion}
+                imprisonment={imprisonment}
+                scales={scales}
+              />
+            )}
           </tr>
         );
       });
@@ -445,6 +456,9 @@ function Pretenders(props) {
               <th className={styles.table_header} colSpan="9">
                 Magic
               </th>
+              {nationId !== 0 && nationId !== "0" && (
+                <th className={styles.table_header}>Export</th>
+              )}
             </tr>
           </thead>
           <tbody id="pretenders-table__body">{pretenderRows}</tbody>
