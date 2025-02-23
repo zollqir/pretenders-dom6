@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Pretenders.module.scss";
+import styles from "../Pretenders.module.scss";
 
 function Export({
   nationId,
