@@ -36,10 +36,14 @@ function BlessEffects(props) {
 
   const handleBlessSelect = (bless) => {
     setSelectedBlesses((prev) => {
-      const isAlreadySelected = prev.some((b) => b.id === bless.id);
-      if (isAlreadySelected) {
-        return prev.filter((b) => b.id !== bless.id);
+      // If not multi-selectable, remove if already selected
+      if (!bless.multi) {
+        const isAlreadySelected = prev.some((b) => b.id === bless.id);
+        if (isAlreadySelected) {
+          return prev.filter((b) => b.id !== bless.id);
+        }
       }
+      // Add the bless effect to the array
       return [...prev, bless];
     });
   };

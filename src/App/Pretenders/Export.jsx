@@ -53,7 +53,7 @@ function Export({
 
     Object.entries(scales).forEach(([scaleName, value]) => {
       if (value !== 0) {
-        lines.push(`#scale ${scaleMap[scaleName]} ${value}`);
+        lines.push(`#scale ${scaleMap[scaleName]} ${-value}`); // Scales are negative to what the should be, un-negative them.
       }
     });
 
