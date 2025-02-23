@@ -3,7 +3,7 @@ import BlessPointsCell from '../BlessPointsCell';
 import styles from './BlessEffectsRows.module.scss';
 
 function BlessEffectsRows(props) {
-    const { effects, onBlessSelect } = props;
+    const { effects, onBlessSelect, isExternalWindow } = props;
     const rows = effects.map(effect => {
         const { id, scales, name, shortDescription, incarnate, multi } = effect;
 
@@ -20,11 +20,14 @@ function BlessEffectsRows(props) {
 			+ (scales?.magic        ? (`Magic: ${       scales.magic        } `) : "")
 		}
               </td>
-              <td className={styles.name}>{name}</td>
+              <td className={styles.name}>{name} {multi && " (*)"}</td>
               <td className={styles.description}>{shortDescription}</td>
               <td className={styles.incarnate}>{incarnate ? "yes" : ""}</td>
-        <td className={styles.name}>{name} {multi && ' (*)'}</td>
-        <td className={styles.incarnate}>{incarnate ? "yes" : ""}</td>
+              {!isExternalWindow && (
+                <td className={styles.add_button}>
+                  <p>Add</p>
+                </td>
+              )}
 	    </tr>
 	);
     });

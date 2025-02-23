@@ -77,6 +77,7 @@ function App(props) {
                                    scales={state.scales}
                                    setSelectedBlesses={setSelectedBlesses}
                                    selectedBlesses={selectedBlesses}
+                                   nationId={state.nationId}
                                        />);
     
     const pretendersComponent = (<Pretenders

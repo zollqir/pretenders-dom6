@@ -8,9 +8,9 @@ function BlessEffectsWindow(props) {
     const {isOpen, onClose, blessEffects} = props;
 
     const close = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (onClose) {
-            onClose()
+            onClose();
         }
     };
 
@@ -35,7 +35,7 @@ function BlessEffectsWindow(props) {
                     <th className={styles.table_header}>Incarnate</th>
                   </tr>
                 </thead>
-                <BlessEffectsRows effects={blessEffects} />
+                <BlessEffectsRows isExternalWindow effects={blessEffects} />
               </table>
             </div>
             <p className={styles.close_button}>
@@ -46,7 +46,7 @@ function BlessEffectsWindow(props) {
                onClick={close}
                />
         </div>
-    )
+    );
 }
 
 export default BlessEffectsWindow;
