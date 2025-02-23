@@ -96,15 +96,13 @@ function BlessEffects(props) {
               <th className={styles.table_header}>Name</th>
               <th className={styles.table_header}>Short description</th>
               <th className={styles.table_header}>Incarnate only?</th>
-              {nationId !== 0 && nationId !== "0" && (
-                <th className={styles.table_header}>Add blessing</th>
-              )}
+              <th className={styles.table_header}>Add blessing</th>
             </tr>
           </thead>
           <BlessEffectsRows
             effects={filteredEffects}
             onBlessSelect={handleBlessSelect}
-            nationId={nationId}
+            isExternalWindow={false}
           />
         </table>
 
