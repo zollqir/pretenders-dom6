@@ -34,6 +34,7 @@ function Pretenders(props) {
     openPretenderOptimizer,
     closePretenderOptimizer,
     isPretenderOptimizerOpen,
+    selectedBlesses,
   } = props;
 
   const paths = { f, a, w, e, s, d, n, g, b };
@@ -435,6 +436,7 @@ function Pretenders(props) {
                 dominion={dominion}
                 imprisonment={imprisonment}
                 scales={scales}
+                selectedBlesses={selectedBlesses}
               />
             )}
           </tr>

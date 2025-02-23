@@ -8,6 +8,7 @@ function Export({
   dominion,
   imprisonment,
   scales,
+  selectedBlesses,
 }) {
   const generateTemplate = () => {
     const lines = [];
@@ -56,9 +57,13 @@ function Export({
       }
     });
 
-    // End template
-    lines.push("#end");
+    if (selectedBlesses?.length > 0) {
+      selectedBlesses.forEach((bless) => {
+        lines.push(`#bless ${bless.id}`);
+      });
+    }
 
+    lines.push("#end");
     return lines.join("\n");
   };
 

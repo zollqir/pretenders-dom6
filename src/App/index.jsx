@@ -19,6 +19,7 @@ function App(props) {
     const { nations, pretenders, version } = props;
 
     const [state, dispatch] = React.useReducer(reducer, initialState);
+    const [selectedBlesses, setSelectedBlesses] = React.useState([]);
 
     const action = createActions(dispatch);
 
@@ -74,6 +75,8 @@ function App(props) {
                                    f={state.f} a={state.a} w={state.w} e={state.e}
                                    s={state.s} d={state.d} n={state.n} g={state.g} b={state.b}
                                    scales={state.scales}
+                                   setSelectedBlesses={setSelectedBlesses}
+                                   selectedBlesses={selectedBlesses}
                                        />);
     
     const pretendersComponent = (<Pretenders
@@ -93,6 +96,7 @@ function App(props) {
                                    openPretenderOptimizer={action.openPretenderOptimizer}
                                    closePretenderOptimizer={action.closePretenderOptimizer}
                                    isPretenderOptimizerOpen={state.isPretenderOptimizerOpen}
+                                   selectedBlesses={selectedBlesses}
                                  />);
     const footerComponent = (<Footer
                 version={version}
