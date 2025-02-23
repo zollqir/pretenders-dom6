@@ -14,7 +14,6 @@ import initialState from './initialState';
 import reducer from './reducer';
 import createActions from './createActions';
 import './App.module.scss';
-import Export from './Export';
 
 function App(props) {
     const { nations, pretenders, version } = props;
@@ -76,15 +75,6 @@ function App(props) {
                                    s={state.s} d={state.d} n={state.n} g={state.g} b={state.b}
                                    scales={state.scales}
                                        />);
-    const exportComponent = (<Export 
-                              nationID={state.nationID}
-                              magic={{f: state.f, a: state.a, w: state.w, e: state.e, s: state.s, d: state.d, n: state.n, g: state.g, b: state.b}}
-                              dominion={state.dominion}
-                              imprisonment={state.imprisonment}
-                              scales={state.scales}
-                              blessings={state.blessBonus}
-                              chassis={state.chassis}
-                              />);
     
     const pretendersComponent = (<Pretenders
                                    f={state.f} a={state.a} w={state.w} e={state.e}
