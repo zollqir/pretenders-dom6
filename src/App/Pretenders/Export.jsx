@@ -59,7 +59,7 @@ function Export({
 
     if (selectedBlesses?.length > 0) {
       selectedBlesses.forEach((bless) => {
-        lines.push(`#bless ${bless.id}`);
+        lines.push(`#bless "${bless.name}"`);
       });
     }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import NationBlessBonusInfo from "./NationBlessBonusInfo";
 import BlessEffectsWindow from "./BlessEffectsWindow";
 import BlessEffectsRows from "./BlessEffectsRows";
+import SelectedBlesses from "./SelectedBlesses";
 
 import { totalBlessPoints } from "./blessPoints";
 
@@ -33,6 +34,14 @@ function BlessEffects(props) {
   const blessPoints = totalBlessPoints(paths, blessBonus);
   const blessEffects = getBlessEffects();
 
+  const handleBlessRemove = (index) => {
+    setSelectedBlesses((prev) => {
+      const newBlesses = [...prev];
+      newBlesses.splice(index, 1);
+      return newBlesses;
+    });
+  };
+
   const handleBlessSelect = (bless) => {
     setSelectedBlesses((prev) => {
       const isAlreadySelected = prev.some((b) => b.id === bless.id);
@@ -52,15 +61,6 @@ function BlessEffects(props) {
     () => filterBlessEffects(blessEffects, memoizedPaths, scales),
     [blessEffects, memoizedPaths, scales]
   );
-
-  useEffect(() => {
-    const filteredIds = new Set(filteredEffects.map((effect) => effect.id));
-    setSelectedBlesses((prev) => {
-      // Only update if there are changes to avoid unnecessary rerenders
-      const filtered = prev.filter((bless) => filteredIds.has(bless.id));
-      return filtered.length === prev.length ? prev : filtered;
-    });
-  }, [filteredEffects]);
 
   return (
     <div className={styles.container}>
@@ -87,19 +87,20 @@ function BlessEffects(props) {
               <th className={styles.table_header}>Name</th>
               <th className={styles.table_header}>Short description</th>
               <th className={styles.table_header}>Incarnate only?</th>
-              <th className={styles.table_header}>Blessing</th>
-              <th className={styles.table_header}>Select</th>
             </tr>
           </thead>
           <BlessEffectsRows
             effects={filteredEffects}
-            selectedBlesses={selectedBlesses}
             onBlessSelect={handleBlessSelect}
           />
         </table>
+
+        <SelectedBlesses
+          selectedBlesses={selectedBlesses}
+          onRemove={handleBlessRemove}
+        />
       </div>
     </div>
   );
 }
-
 export default BlessEffects;

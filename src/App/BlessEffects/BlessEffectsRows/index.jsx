@@ -1,20 +1,17 @@
 import React from "react";
-
 import BlessPointsCell from "../BlessPointsCell";
-
 import styles from "./BlessEffectsRows.module.scss";
 
 function BlessEffectsRows(props) {
-  const { effects, selectedBlesses, onBlessSelect } = props;
+  const { effects, onBlessSelect } = props;
 
   const rows = effects.map((effect) => {
-    const { id, scales, name, shortDescription, incarnate } = effect;
-    const isSelected = selectedBlesses?.some((bless) => bless.id === id);
+    const { id, scales, name, shortDescription, incarnate, multi } = effect;
 
     return (
       <tr
         key={id}
-        className={`${styles.row} ${isSelected ? styles.selected : ""}`}
+        className={styles.row}
         onClick={() => onBlessSelect?.(effect)}
       >
         <BlessPointsCell effect={effect} />
@@ -28,18 +25,9 @@ function BlessEffectsRows(props) {
             (scales?.fortune ? `Fortune: ${scales.fortune} ` : "") +
             (scales?.magic ? `Magic: ${scales.magic} ` : "")}
         </td>
-        <td className={styles.name}>{name}</td>
+        <td className={styles.name}>{name} {multi && ' (*)'}</td>
         <td className={styles.description}>{shortDescription}</td>
         <td className={styles.incarnate}>{incarnate ? "yes" : ""}</td>
-        <td className={styles.name}>{name}</td>
-        <td className={styles.centered}>
-          <input
-            type="checkbox"
-            checked={isSelected}
-            onChange={() => onBlessSelect?.(effect)}
-            onClick={(e) => e.stopPropagation()}
-          />
-        </td>
       </tr>
     );
   });

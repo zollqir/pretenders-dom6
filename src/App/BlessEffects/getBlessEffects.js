@@ -1,19 +1,19 @@
 export function getBlessEffects() {
 
   const blessData = [
-    {id: 1, f: 1, name: "Superior Morale (*)",
+    {id: 1, f: 1, name: "Superior Morale", multi: true,
       shortDescription: "+1 morale"
     },
     {id: 2, f: 1, d: 1, name: "Wasteland Survival",
       shortDescription: "Wasteland survival trait"
     },
-    {id: 3, f: 2, name: "Fire Resistance (*)",
+    {id: 3, f: 2, name: "Fire Resistance", multi: true,
       shortDescription: "Fire resistance 5"
     },
-    {id: 4, f: 2, name: "Attack Skill (*)",
+    {id: 4, f: 2, name: "Attack Skill", multi: true,
       shortDescription: "+1 attack skill"
     },
-    {id: 5, f: 3, name: "Inspirational Presence (*)",
+    {id: 5, f: 3, name: "Inspirational Presence", multi: true,
       shortDescription: "+1 inspirational, +50 leadership"
     },
     {id: 6, f: 4, name: "Righteous Wrath",
@@ -35,19 +35,19 @@ export function getBlessEffects() {
     {id: 11, f: 8, s: 4, name: "Unbearable Splendour", incarnate: true,
       shortDescription: "Unbearable splendour"
     },
-    {id: 12, a: 1, name: "Precision (*)",
+    {id: 12, a: 1, name: "Precision", multi: true,
       shortDescription: "+1 precision"
     },
-    {id: 13, a: 2, name: "Shock Resistance (*)",
+    {id: 13, a: 2, name: "Shock Resistance", multi: true,
       shortDescription: "Shock resistance 5"
     },
-    {id: 14, a: 2, name: "Farshot (*)",
+    {id: 14, a: 2, name: "Farshot", multi: true,
       shortDescription: "Weapon range +30%"
     },
     {id: 15, a: 3, name: "Awareness",
       shortDescription: "Unsurroundable +2"
     },
-    {id: 16, a: 4, name: "Swiftness (*)",
+    {id: 16, a: 4, name: "Swiftness", multi: true,
       shortDescription: "Movement +30%, +1 defence"
     },
     {id: 17, a: 4, name: "Storm Flight",
@@ -77,13 +77,13 @@ export function getBlessEffects() {
     {id: 25, w: 1, n: 1, name: "Swamp Survival",
       shortDescription: "Swamp survival trait"
     },
-    {id: 26, w: 2, name: "Cold Resistance (*)",
+    {id: 26, w: 2, name: "Cold Resistance", multi: true,
       shortDescription: "Cold resistance 5"
     },
     {id: 27, w: 2, name: "Swimming",
       shortDescription: "Cross rivers, lower penalties fighting underwater"
     },
-    {id: 28, w: 2, name: "Defence Skill (*)",
+    {id: 28, w: 2, name: "Defence Skill", multi: true,
       shortDescription: "+1 defence skill" 
     },
     {id: 29, w: 5, name: "Chill Aura", incarnate: true,
@@ -107,10 +107,10 @@ export function getBlessEffects() {
     {id: 35, e: 1, name: "Mountain Survival",
       shortDescription: "Mountain survival trait"
     },
-    {id: 36, e: 2, name: "Reinvigoration (*)",
+    {id: 36, e: 2, name: "Reinvigoration", multi: true,
       shortDescription: "+1 reinvigoration"
     },
-    {id: 37, e: 2, name: "Strength of the Earth (*)",
+    {id: 37, e: 2, name: "Strength of the Earth", multi: true,
       shortDescription: "+1 strength"
     },
     {id: 38, e: 4, name: "Unbreakable", 
@@ -131,10 +131,10 @@ export function getBlessEffects() {
     {id: 43, e: 7, name: "Fortitude", incarnate: true,
       shortDescription: "½ damage from pierce, slash and blunt weapons"
     },
-    {id: 44, s: 1, name: "Arcane Command (*)",
+    {id: 44, s: 1, name: "Arcane Command", multi: true,
       shortDescription: "+25 magic leadership"
     },
-    {id: 45, s: 2, name: "Magic Resistance (*)",
+    {id: 45, s: 2, name: "Magic Resistance", multi: true,
       shortDescription: "+1 magic resistance"
     },
     {id: 46, s: 3, d: 1, name: "Spirit Sight",
@@ -161,10 +161,10 @@ export function getBlessEffects() {
     {id: 53, s: 8, scales:{magic:2}, name: "Etherealness", incarnate: true,
       shortDescription: "Ethereal trait (75% avoid non-magical damage)"
     },
-    {id: 54, d: 1, name: "Undying (*)",
+    {id: 54, d: 1, name: "Undying", multi: true,
       shortDescription: "+2 undying HP"
     },
-    {id: 55, d: 1, name: "Undead Command (*)",
+    {id: 55, d: 1, name: "Undead Command", multi: true,
       shortDescription: "+50 undead leadership"
     },
     {id: 56, d: 2, scales:{growth:-2}, name: "Half Dead",
@@ -191,13 +191,13 @@ export function getBlessEffects() {
     {id: 63, d: 8, name: "Fear", incarnate: true,
       shortDescription: "Fear 5"
     },
-    {id: 64, n: 1, scales:{}, name: "Resilient (*)",
+    {id: 64, n: 1, scales:{}, name: "Resilient", multi: true,
       shortDescription: "+1 hp"
     },
     {id: 65, n: 1, name: "Low Light Vision",
       shortDescription: "Darkvision 50"
     },
-    {id: 66, n: 2, name: "Poison Resistance (*)",
+    {id: 66, n: 2, name: "Poison Resistance", multi: true,
       shortDescription: "Poison resistance 5"
     },
     {id: 67, n: 2, name: "Forest Survival",
@@ -224,7 +224,7 @@ export function getBlessEffects() {
     {id: 74, g: 1, name: "Undreaming", 
       shortDescription: "+4 magic resistance vs. sleep"
     },
-    {id: 75, g: 1, name: "Heroism (*)",
+    {id: 75, g: 1, name: "Heroism", multi: true,
       shortDescription: "+50% experience"
     },
     {id: 76, g: 2, name: "Quiet Stride",
@@ -251,10 +251,10 @@ export function getBlessEffects() {
     {id: 83, g: 8, scales:{fortune:2}, name: "Luck", incarnate: true,
       shortDescription: "75% to avoid the last fatal blow"
     },
-    {id: 84, b: 1, name: "Strong Vitae (*)",
+    {id: 84, b: 1, name: "Strong Vitae", multi: true,
       shortDescription: "+1 hp"
     },
-    {id: 85, b: 2, name: "Strength of the Flesh (*)",
+    {id: 85, b: 2, name: "Strength of the Flesh", multi: true,
       shortDescription: "+1 strength"
     },
     {id: 86, b: 3, name: "Strong Blood",
