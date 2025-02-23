@@ -1,64 +1,62 @@
 .cell {
-    font-size: 11px;
-    color: #cccccc;
-    text-align: center;
-    background: linear-gradient(#3f4142, #3d3940);
+  font-size: 11px;
+  color: #cccccc;
+  text-align: center;
 }
 
 .bless_points {
-    padding: 1px;
-    font-size: 11px;
-    text-align: center;
-    background: linear-gradient(#3f4142, #3d3940);
+  padding: 1px;
+  font-size: 11px;
+  text-align: center;
 }
 
 .bless_points_f {
-    @extend .bless_points;
-    background-image: none;
-    background-color: #b03523;
-    color: #f6f6f6;
+  @extend .bless_points;
+  background-image: none;
+  background-color: #b03523;
+  color: #f6f6f6;
 }
 
 .bless_points_a {
-    @extend .bless_points;
-    background-image: none;
-    background-color: #a38e96;
-    color: #f6f6f6;
+  @extend .bless_points;
+  background-image: none;
+  background-color: #a38e96;
+  color: #f6f6f6;
 }
 
 .bless_points_w {
-    @extend .bless_points;
-    background-image: none;
-    background-color: #331d98;
-    color: #f6f6f6;
+  @extend .bless_points;
+  background-image: none;
+  background-color: #331d98;
+  color: #f6f6f6;
 }
 
 .bless_points_e {
-    @extend .bless_points;
-    background-image: none;
-    background-color: #b08130;
-    color: #f6f6f6;
+  @extend .bless_points;
+  background-image: none;
+  background-color: #b08130;
+  color: #f6f6f6;
 }
 
 .bless_points_s {
-    @extend .bless_points;
-    background-image: none;
-    background-color: #709b96;
-    color: #f6f6f6;
+  @extend .bless_points;
+  background-image: none;
+  background-color: #709b96;
+  color: #f6f6f6;
 }
 
 .bless_points_d {
-    @extend .bless_points;
-    background-image: none;
-    background-color: #701b63;
-    color: #f6f6f6;
+  @extend .bless_points;
+  background-image: none;
+  background-color: #701b63;
+  color: #f6f6f6;
 }
 
 .bless_points_n {
-    @extend .bless_points;
-    background-image: none;
-    background-color: #3d7523;
-    color: #f6f6f6;
+  @extend .bless_points;
+  background-image: none;
+  background-color: #3d7523;
+  color: #f6f6f6;
 }
 
 .bless_points_g {
@@ -69,8 +67,8 @@
 }
 
 .bless_points_b {
-    @extend .bless_points;
-    background-image: none;
-    background-color: #7d1b16;
-    color: #f6f6f6;
+  @extend .bless_points;
+  background-image: none;
+  background-color: #7d1b16;
+  color: #f6f6f6;
 }

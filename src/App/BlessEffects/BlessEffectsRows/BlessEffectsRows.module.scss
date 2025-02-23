@@ -1,39 +1,32 @@
 .row {
   background: linear-gradient(#3f4142, #3d3940);
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(darken(#3f4142, 5%), darken(#3d3940, 5%));
+  }
+
+  &.selected {
+    background: linear-gradient(darken(#3f4142, 10%), darken(#3d3940, 10%));
+  }
 }
 
 .scales {
   font-size: 10px;
-  background: linear-gradient(#3f4142, #3d3940);
 }
 
 .name {
   font-size: 12px;
-  background: linear-gradient(#3f4142, #3d3940);
 }
 
 .description {
   font-size: 10px;
   word-wrap: break-word;
-  background: linear-gradient(#3f4142, #3d3940);
 }
 
 .incarnate {
   font-size: 10px;
   text-align: center;
-  background: linear-gradient(#3f4142, #3d3940);
-}
-
-.row {
-  cursor: pointer;
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-
-  &.selected {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
 }
 
 .centered {
