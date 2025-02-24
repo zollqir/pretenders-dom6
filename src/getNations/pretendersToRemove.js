@@ -42,6 +42,14 @@ export const pretendersToRemove = {
     "2440", // Sea Dragon
     "2847", // Protogenos of the Sea
     "2855", // Floating Mind
+  ],
+  "123": [ // LA Pyrene
+    "179", // Master Lich
+    "3895", // Ferryman
+    "3888", // Dracolich
+    "872", // Ghost king
+    "2848", // Father of the Sea
+    "180", // Demilich
   ]
 };
 
