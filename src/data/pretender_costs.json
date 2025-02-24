@@ -284,5 +284,5 @@
 	"4003": { "name": "Divine Consul", "pointcost": 100 },
 	"4024": { "name": "Mother Mandragora", "pointcost": 290 },
 	"4025": { "name": "Titan Mandragora", "pointcost": 270 },
-	"4032": { "name": "Worm Soul", "pointcost": 240 }
+	"4033": { "name": "Worm Soul", "pointcost": 240 }
 }
