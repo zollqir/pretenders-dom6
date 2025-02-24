@@ -1,25 +1,46 @@
+@use "sass:color";
+
 .row {
-    background: linear-gradient(#3f4142, #3d3940);
+  background: linear-gradient(#3f4142, #3d3940);
+  cursor: pointer;
+
+  &:hover:not(:has(.add_button:hover)) {
+    background: linear-gradient(
+      color.adjust(#3f4142, $lightness: -5%),
+      color.adjust(#3d3940, $lightness: -5%)
+    );
+  }
 }
 
 .scales {
-    font-size: 10px;
-    background: linear-gradient(#3f4142, #3d3940);
+  font-size: 10px;
 }
 
 .name {
-    font-size: 12px;
-    background: linear-gradient(#3f4142, #3d3940);
+  font-size: 12px;
 }
 
 .description {
-    font-size: 10px;
-    word-wrap: break-word;
-    background: linear-gradient(#3f4142, #3d3940);
+  font-size: 10px;
+  word-wrap: break-word;
 }
 
 .incarnate {
-    font-size: 10px;
-    text-align: center;
-    background: linear-gradient(#3f4142, #3d3940);
+  font-size: 10px;
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.add_button {
+  text-align: center;
+  background: linear-gradient(#3f4142, #3d3940);
+  &:hover {
+    background: linear-gradient(
+      color.adjust(#3f4142, $lightness: 5%),
+      color.adjust(#3d3940, $lightness: 5%)
+    );
+  }
 }

@@ -1,25 +1,26 @@
 .container {
-    border-color: #c1ab5d;
-    border-width: 4px;
-    border-style: solid;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 3px;
-    margin-right: 3px;
-    border-radius: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    heigh: 100%;
+  border-color: #c1ab5d;
+  border-width: 4px;
+  border-style: solid;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
-    color: #eeeeee;
-    font-size: 14px;
-    text-align: center;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    background-color: #403838;
-    width: 100%;
-    z-index: -1;
+  color: #eeeeee;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: #403838;
+  width: 100%;
+  z-index: -1;
 }

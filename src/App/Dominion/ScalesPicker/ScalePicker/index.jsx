@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { clamp } from 'ramda';
-
 import styles from './ScalePicker.module.scss';
 
 function ScalePicker(props) {
@@ -13,6 +11,7 @@ function ScalePicker(props) {
         changeScale
     } = props;
 
+    const clamp = (min, max, value) => Math.min(Math.max(value, min), max);
     const handleChange = (event) => {
       const level = parseInt(event.target.value, 10);
 

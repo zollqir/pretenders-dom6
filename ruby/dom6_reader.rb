@@ -100,11 +100,14 @@ module Dom6
     end
     
     def read_nation_attrs
-      read_a_file("attributes_by_nation") do | nat_attr |
+      read_a_file("attributes_by_nation") do |nat_attr|
         attr, nation_id, val = nat_attr.fields(:attribute,
-                                               :nation_number,
-                                               :raw_value)
-        nation = @nations[ nation_id ]
+                                             :nation_number,
+                                             :raw_value)
+        nation = @nations[nation_id]
+        # Skip if nation not found
+        next unless nation
+        
         attr_i = attr.to_i
         
         if attr_i == ATTR_HOME_REALM

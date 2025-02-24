@@ -1,5 +1,5 @@
-const pretenders = require('../data/pretenders.json');
-const costs = require('../data/pretender_costs.json');
+import pretenders from '../data/pretenders.json';
+import costs from '../data/pretender_costs.json';
 
 function getPretenders() {
     
