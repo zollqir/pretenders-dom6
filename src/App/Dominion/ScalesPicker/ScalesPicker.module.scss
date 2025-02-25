@@ -82,6 +82,11 @@
     border-width: 0;
     text-align: center;
     padding: 0;
+
+    // Add this block to shift negative sign left
+    &[value^="-"] {
+        text-indent: -8px;
+    }
     
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
