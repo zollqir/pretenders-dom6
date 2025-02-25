@@ -2,14 +2,12 @@
   border-color: #c1ab5d;
   border-width: 4px;
   border-style: solid;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-left: 3px;
-  margin-right: 3px;
   border-radius: 14px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: fit-content;
+  background-color: #403838;
+  min-height: 100px;
 }
 
 .header {
@@ -18,9 +16,7 @@
   font-weight: 700;
   font-size: 16px;
   text-align: center;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 0.5rem;
   background-color: #403838;
-  width: 100%;
-  z-index: -1;
+  border-radius: 10px 10px 0 0;
 }
