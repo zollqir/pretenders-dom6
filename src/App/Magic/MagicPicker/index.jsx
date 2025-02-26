@@ -1,5 +1,15 @@
 import React from 'react';
 
+import fireIcon from '../../../../public/Path_F.png';
+import airIcon from '../../../../public/Path_A.png';
+import waterIcon from '../../../../public/Path_W.png';
+import earthIcon from '../../../../public/Path_E.png';
+import astralIcon from '../../../../public/Path_S.png';
+import deathIcon from '../../../../public/Path_D.png';
+import natureIcon from '../../../../public/Path_N.png';
+import glamourIcon from '../../../../public/Path_G.png';
+import bloodIcon from '../../../../public/Path_B.png';
+
 import styles from './MagicPicker.module.scss';
 
 function MagicPicker(props) {
@@ -10,7 +20,7 @@ function MagicPicker(props) {
         e, changeEarth,
         s, changeAstral,
         d, changeDeath,
-        n, changeNature,
+        n, changeNature,	
         g, changeGlamour,
         b, changeBlood,
     } = props;
@@ -18,6 +28,12 @@ function MagicPicker(props) {
     const handleChange = (event) => {
         const level = parseInt(event.target.value, 10);
         const path = event.target.name;
+        updateValue(path, level);
+    }
+
+    const updateValue = (path, level) => {
+        if (level < 0 || level > 10) return;
+        
         switch (path) {
         case "f": changeFire(level);   break;
         case "a": changeAir(level);    break;
@@ -32,85 +48,64 @@ function MagicPicker(props) {
         }
     }
 
+    const handleClick = (event, path, currentValue) => {
+        event.preventDefault();
+        updateValue(path, currentValue + 1);
+    }
+
+    const handleContextMenu = (event, path, currentValue) => {
+        // Right click
+        event.preventDefault();
+        updateValue(path, currentValue - 1);
+    }
+
+    const renderPicker = (path, value, icon, alt) => (
+        <div className={styles.picker}>
+            <button 
+                className={styles.iconButton}
+                onClick={(e) => handleClick(e, path, value)}
+                onContextMenu={(e) => handleContextMenu(e, path, value)}
+            >
+                <img src={icon} alt={alt} className={styles.pathIcon} />
+            </button>
+            <div className={styles.inputWrapper}>
+                <button 
+                    className={styles.arrowButton}
+                    onClick={() => updateValue(path, value + 1)}
+                >▲</button>
+                <input 
+                    type="number" 
+                    name={path} 
+                    onChange={handleChange} 
+                    min="0" 
+                    max="10"
+                    value={value}
+                    className={styles.input}
+                />
+                <button 
+                    className={styles.arrowButton}
+                    onClick={() => updateValue(path, value - 1)}
+                >▼</button>
+            </div>
+        </div>
+    );
+
     return (
-	<div className={styles.container}>
-	  <div className={styles.section}>
-	    <div className={styles.picker}>
-	      <label className={styles.label_fire} htmlFor="fire-picker__input">
-		F
-	      </label>
-	      <input type="number" name="f" onChange={handleChange} min="0" max="10"
-                     value={f}
-		     id="fire-picker__input" className={styles.input}/>
-	    </div>
-	    <div className={styles.picker}>
-	      <label className={styles.label_air} htmlFor="air-picker__input">
-		A
-	      </label>
-	      <input type="number" name="a" onChange={handleChange} min="0" max="10"
-                     value={a}
-		     id="air-picker__input" className={styles.input} />
-	    </div>
-	    <div className={styles.picker}>
-	      <label className={styles.label_water} htmlFor="water-picker__input">
-		W
-	      </label>
-	      <input type="number" name="w" onChange={handleChange} min="0" max="10"
-                     value={w}
-		     id="water-picker__input" className={styles.input} />
-	    </div>
-	    <div className={styles.picker}>
-	      <label className={styles.label_earth} htmlFor="earth-picker__input">
-		E
-	      </label>
-	      <input type="number" name="e" onChange={handleChange} min="0" max="10"
-                     value={e}
-		     id="earth-picker__input" className={styles.input} />
-	    </div>
-	  </div>
-	  <div className={styles.section}>
-	    <div className={styles.picker}>
-	      <label className={styles.label_astral} htmlFor="astral-picker__input">
-		S
-	      </label>
-	      <input type="number" name="s" onChange={handleChange} min="0" max="10"
-                     value={s}
-		     id="astral-picker__input" className={styles.input} />
-	    </div>
-	    <div className={styles.picker}>
-	      <label className={styles.label_death} htmlFor="death-picker__input">
-		D
-	      </label>
-	      <input type="number" name="d" onChange={handleChange} min="0" max="10"
-                     value={d}
-		     id="death-picker__input" className={styles.input} />
-	    </div>
-	    <div className={styles.picker}>
-	      <label className={styles.label_nature} htmlFor="nature-picker__input">
-		N
-	      </label>
-	      <input type="number" name="n" onChange={handleChange} min="0" max="10"
-                     value={n}
-		     id="nature-picker__input" className={styles.input} />
-	    </div>
-      <div className={styles.picker}>
-        <label className={styles.label_glamour} htmlFor="glamour-picker__input">
-    G
-        </label>
-        <input type="number" name="g" onChange={handleChange} min="0" max="10"
-                     value={g}
-         id="glamour-picker__input" className={styles.input} />
-      </div>
-	    <div className={styles.picker}>
-	      <label className={styles.label_blood} htmlFor="blood-picker__input">
-		B
-	      </label>
-	      <input type="number" name="b" onChange={handleChange} min="0" max="10"
-                     value={b}
-		     id="blood-picker__input" className={styles.input} />
-	    </div>
-	  </div>
-	</div>
+        <div className={styles.container}>
+            <div className={styles.section}>
+                {renderPicker("f", f, fireIcon, "Fire")}
+                {renderPicker("a", a, airIcon, "Air")}
+                {renderPicker("w", w, waterIcon, "Water")}
+                {renderPicker("e", e, earthIcon, "Earth")}
+            </div>
+            <div className={styles.section}>
+                {renderPicker("s", s, astralIcon, "Astral")}
+                {renderPicker("d", d, deathIcon, "Death")}
+                {renderPicker("n", n, natureIcon, "Nature")}
+                {renderPicker("g", g, glamourIcon, "Glamour")}
+                {renderPicker("b", b, bloodIcon, "Blood")}
+            </div>
+        </div>
     );
 }
 

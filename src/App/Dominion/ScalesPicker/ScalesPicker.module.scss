@@ -1,53 +1,75 @@
 .container {
     color: #eeeeee;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column;
     padding: 3px;
+    gap: 10px;
+    padding-bottom: 15px;
 }
 
-.section {
+.dominion {
     display: flex;
-    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.scales {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 8px;
 }
 
 .picker {
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     align-items: center;
     margin: 2px 2px;
 }
 
-.picker_scale {
-    @extend .picker;
-    flex-flow: column;
-    margin: 2px 1px;
-}
-
-.picker_dominion {
-    @extend .picker;
-    margin-right: 12px;
-    flex-flow: column;
-}
-
-.label {
-    font-size: 12px;
-    padding: 2px 6px;
-    font-family: monospace;;
-    display: block;
-}
-
-.label_dominion {
-    @extend .label;
-    background-color: #ffffee;
-    color: #111111;
-    padding: 2px 3px;
-}
-
-.label_scale {
-    @extend .label;
-    font-size: 10px;
+.iconButton {
+    background: none;
+    border: none;
     padding: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    padding: 6px;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.dominionButton {
+    background: none;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    min-width: 32px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input {
@@ -59,22 +81,64 @@
     background-color: inherit;
     border-width: 0;
     text-align: center;
-}
-
-.input_scale {
-    @extend .input;
     padding: 0;
-    width: 2.4em;
-    margin: 0;
+
+    // Add this block to shift negative sign left
+    &[value^="-"] {
+        text-indent: -8px;
+    }
+    
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    -moz-appearance: textfield;
 }
 
-.input_dominion {
+.dominionInput {
     @extend .input;
+    width: 3em;
 }
 
-.button {
+.dominionIcon {
+    width: 11px;
+    height: 48px;
+    display: block;
+}
+
+.scaleIcon {
+    width: 24px;
+    height: 28px;
+    display: block;
+}
+
+.arrowButton {
+    background: none;
+    border: none;
+    color: #eeeeee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.label {
+    color: #eeeeee;
     font-size: 15px;
-    font-weight: normal;
     font-family: monospace;
-    text-align: center;
 }
