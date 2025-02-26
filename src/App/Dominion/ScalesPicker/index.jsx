@@ -1,19 +1,19 @@
 import React from 'react';
 import styles from './ScalesPicker.module.scss';
 
-import orderIcon from '../../../../public/order.png';
-import turmoilIcon from '../../../../public/turmoil.png';
-import productivityIcon from '../../../../public/productivity.png';
-import slothIcon from '../../../../public/sloth.png';
-import heatIcon from '../../../../public/heat.png';
-import coldIcon from '../../../../public/cold.png';
-import growthIcon from '../../../../public/growth.png';
-import deathIcon from '../../../../public/death.png';
-import luckIcon from '../../../../public/luck.png';
-import misfortuneIcon from '../../../../public/misfortune.png';
-import magicIcon from '../../../../public/magic.png';
-import drainIcon from '../../../../public/drain.png';
-import dominionCandleIcon from '../../../../public/dominioncandle.png';
+import orderIcon from '../../../assets/order.png';
+import turmoilIcon from '../../../assets/turmoil.png';
+import productivityIcon from '../../../assets/productivity.png';
+import slothIcon from '../../../assets/sloth.png';
+import heatIcon from '../../../assets/heat.png';
+import coldIcon from '../../../assets/cold.png';
+import growthIcon from '../../../assets/growth.png';
+import deathIcon from '../../../assets/death.png';
+import luckIcon from '../../../assets/luck.png';
+import misfortuneIcon from '../../../assets/misfortune.png';
+import magicIcon from '../../../assets/magic.png';
+import drainIcon from '../../../assets/drain.png';
+import dominionCandleIcon from '../../../assets/dominioncandle.png';
 
 function ScalesPicker(props) {
     const {

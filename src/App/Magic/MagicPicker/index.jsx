@@ -1,14 +1,14 @@
 import React from 'react';
 
-import fireIcon from '../../../../public/Path_F.png';
-import airIcon from '../../../../public/Path_A.png';
-import waterIcon from '../../../../public/Path_W.png';
-import earthIcon from '../../../../public/Path_E.png';
-import astralIcon from '../../../../public/Path_S.png';
-import deathIcon from '../../../../public/Path_D.png';
-import natureIcon from '../../../../public/Path_N.png';
-import glamourIcon from '../../../../public/Path_G.png';
-import bloodIcon from '../../../../public/Path_B.png';
+import fireIcon from '../../../assets/Path_F.png';
+import airIcon from '../../../assets/Path_A.png';
+import waterIcon from '../../../assets/Path_W.png';
+import earthIcon from '../../../assets/Path_E.png';
+import astralIcon from '../../../assets/Path_S.png';
+import deathIcon from '../../../assets/Path_D.png';
+import natureIcon from '../../../assets/Path_N.png';
+import glamourIcon from '../../../assets/Path_G.png';
+import bloodIcon from '../../../assets/Path_B.png';
 
 import styles from './MagicPicker.module.scss';
 
