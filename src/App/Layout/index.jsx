@@ -9,8 +9,8 @@ function Layout(props) {
     } = props;
 
     return (
-        <div className={styles.container}>
-            <main>
+        <>
+            <main className={styles.main}>
                 <div className={styles.columnsContainer}>
                     <div className={styles.leftColumn}>
                         <Box title="Nation" body={nation} />
@@ -32,7 +32,7 @@ function Layout(props) {
             </main>
             {footer}
             {debugBar}
-        </div>
+        </>
     );
 }
 

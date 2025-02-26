@@ -8,9 +8,12 @@
 .columnsContainer {
     display: grid;
     gap: 1rem;
+    margin-left: 5px;
     
     @media (min-width: 1075px) {
-        grid-template-columns: minmax(300px, 500px) 1fr;
+        grid-template-columns: 40% 1fr;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
@@ -39,4 +42,7 @@
 .rightColumn {
     height: 100%;
     min-width: 0;
+}
+.main {
+    width: 98vw;
 }
