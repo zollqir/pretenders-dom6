@@ -16,6 +16,7 @@ npm run build
 ```
 
 ## Changelog
+- Version 2.04.2: Fix bug where scales could not go beyond +/- 3.
 - Version 2.04.1: Add scale requirements for fear and dread.
 - Version 2.04.0: Reduce layout shifting, add magic and scale icons, can left or right click just like in Dominions!
 - Version 2.03.0: Migrate to Vite from CRA, add new pretender costs, add AI Pretender exporter

@@ -46,7 +46,7 @@ function ScalesPicker(props) {
     };
 
     const updateValue = (scale, value) => {
-        if (value < -3 || value > 3) return;
+        if (value < -4 || value > 4) return;
         
         switch (scale) {
             case "order": changeOrder(value); break;
