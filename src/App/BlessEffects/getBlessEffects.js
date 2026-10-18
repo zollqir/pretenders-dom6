@@ -156,7 +156,7 @@ export function getBlessEffects() {
       shortDescription: "Negate first successful attack"
     },
     {id: 52, s: 7, scales:{fortune:-1}, name: "Fateweaving", incarnate: true,
-      shortDescription: "Attacker can get Cursed Luck (12 vs MR) after striking"
+      shortDescription: "Attacker can get Cursed Luck (16 vs MR) after striking"
     },
     {id: 53, s: 8, scales:{magic:2}, name: "Etherealness", incarnate: true,
       shortDescription: "Ethereal trait (75% avoid non-magical damage)"
